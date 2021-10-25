@@ -24,6 +24,7 @@ body{
 }
 
 .prev-bg{
+  min-height: 100vh;
     background: linear-gradient(
     140deg,
     #ebcdfd 0%,
