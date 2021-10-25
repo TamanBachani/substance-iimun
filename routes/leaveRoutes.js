@@ -198,6 +198,7 @@ router.put("/:id", getIntern, async (req, res) => {
     // console.log(sub_id)
   } catch (e) {
     console.error(e.message);
+    console.log("here")
     res.status(500).send({
       error: e.message,
     });
@@ -216,6 +217,7 @@ router.get("/status", getIntern, async (req, res) => {
     return res.send(allLeavesbyIntern);
   } catch (e) {
     console.error(e.message);
+    console.log("here")
     return res.status(500).send({
       error: e.message,
     });
