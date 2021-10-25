@@ -50,18 +50,14 @@ const LeaveState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json',
         "auth-token": localStorage.getItem("auth-token"),
       },
     });
     setLoading(false);
     const status = response.status;
     if (status === 200) {
-      let res= {};
-      try {
-        res = await response.json();
-      } catch (e) {
-        console.log("here", e)
-      }
+      const res = await response.json();
       console.log(res)
       if (!Array.isArray(res)) {
         setallLeaves([])
