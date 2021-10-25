@@ -57,6 +57,7 @@ const LeaveState = (props) => {
     const status = response.status;
     if (status === 200) {
       const res = await response.json();
+      console.log(res)
       if (!Array.isArray(res)) {
         setallLeaves([])
         
