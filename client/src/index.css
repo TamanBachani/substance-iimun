@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+#root{
+  height: 100%;
+}
+
+::selection{
+  background-color: rgb(175, 86, 128);
+  color: white;
+}

@@ -1,0 +1,178 @@
+.apply-page {
+  height: 85.3vh;
+  background: #5a189a;
+}
+
+.apply-heading {
+  font-family: "Cirka";
+  color: white;
+  padding: 1em;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.form-reside {
+  background-color: white;
+  color: #5a189a;
+  margin: auto;
+  width: 86%;
+  max-width: 400px;
+  padding: 3rem 2.5rem;
+  border-radius: 35px;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.apply-btn {
+  background: #5a189a;
+  color: white;
+  border: none;
+  text-align: center;
+  padding: 0.65rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  /* margin-top: 1.5rem; */
+  transition: background 500ms ease-in-out, transform 500ms linear;
+}
+
+.apply-btn:hover {
+  background: #240046;
+  transform: scale(1.1);
+}
+
+.form-label {
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.form-control {
+  color: #5a189a;
+  margin-bottom: 1.5rem;
+}
+
+.form-control::placeholder {
+  color: #e0aaff;
+  text-shadow: none;
+}
+
+/* For check page */
+.check-page {
+  min-height: 90vh;
+  background: linear-gradient(
+    to top right,
+    #7b2cbf 0%,
+    #3c096c 20%,
+    #7b2cbf 0%,
+    #3c096c 40%,
+    #7b2cbf 0%,
+    #3c096c 60%,
+    #7b2cbf 0%,
+    #3c096c 80%,
+    #7b2cbf 0%,
+    #3c096c 100%
+  );
+}
+
+.check-heading {
+  font-family: "Cirka";
+  color: white;
+  padding: 1em;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.all-leaves {
+  padding: 3em 0.5em;
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 0;
+}
+
+.check-card {
+  width: 40%;
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  transition: background 500ms ease-out;
+  font-weight: 600;
+}
+
+.green-card {
+  background: rgba(121 255 97 / 0.7);
+  border: 3px solid rgba(121 255 97/ 0.7);
+}
+
+.red-card {
+  background: rgba(255 99 99 / 0.7);
+  border: 3px solid rgba(255 99 99 / 0.7);
+}
+
+.yellow-card {
+  background: rgba(255 233 107 / 0.7);
+  border: 3px solid rgba(255 233 107 / 0.7);
+}
+
+.no-leaves{
+  color: white;
+}
+
+.check-card-padding {
+  padding: 1.5em 1.5em;
+  padding-top: 0;
+}
+
+.check-card:hover {
+  box-shadow: 1px 1px 13px rgba(255, 255, 255, 0.5);
+  background: rgba(255 255 255 / 1);
+}
+
+.check-subject {
+  font-size: 1.5rem;
+  position: relative;
+  margin-bottom: 1em;
+  margin-top: 0;
+  padding-top: 1em;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.check-msg {
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+}
+
+.check-status {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+  line-height: 1.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.check-subject:hover, .check-msg:hover, .check-status:hover{
+  cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  .check-card {
+    width: 80%;
+  }
+}

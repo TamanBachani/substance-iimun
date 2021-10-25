@@ -1,0 +1,96 @@
+@import url(//db.onlinewebfonts.com/c/601d39e6f285498e3065a0ac145d190d?family=Cirka);
+@font-face {
+  font-family: Cirka;
+  font-weight: bold;
+  src: url("../cirka-bold.otf") format("opentype");
+}
+
+.navbar {
+  background-color: #240046;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #e0aaff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.dropdown-item {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: white;
+}
+
+.fa-bars {
+  color: #e0aaff;
+  font-size: 1.6rem;
+}
+
+.logo{
+      width: 2em;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 55px;
+    top: 9px;
+}
+
+.dropdown-menu {
+  background: #edcdff;
+  color: #10002b;
+  left: -4.6rem !important;
+}
+
+.nav-link {
+  padding-left: 0 !important;
+  padding-right: 2rem !important;
+  letter-spacing: 2px;
+}
+
+.navbar-brand {
+  margin-left: 6.5rem !important;
+  font-family: "Cirka";
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+}
+
+.logout {
+  border: none;
+  background: transparent;
+  width: fit-content;
+  padding-right: 0;
+}
+
+.leave-notif {
+  position: absolute;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  background: blue;
+  top: 3px;
+    left: 4.5rem;
+    color: white;
+    width: 17px;
+    height: 17px;
+}
+
+.notif {
+  position: absolute;
+  line-height: 0;
+  bottom: 7.9px;
+    left: 4.7px;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    margin-left: 61px !important;
+  }
+  .logo{
+    left: 17px;
+  }
+}
