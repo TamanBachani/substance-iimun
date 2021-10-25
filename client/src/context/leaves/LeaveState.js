@@ -57,7 +57,12 @@ const LeaveState = (props) => {
     setLoading(false);
     const status = response.status;
     if (status === 200) {
-      const res = await response.json();
+      let res= {};
+      try {
+        res = await response.json();
+      } catch (e) {
+        console.log("here", e)
+      }
       console.log(res)
       if (!Array.isArray(res)) {
         setallLeaves([])
