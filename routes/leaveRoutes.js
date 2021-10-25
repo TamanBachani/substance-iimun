@@ -214,6 +214,7 @@ router.get("/status", getIntern, async (req, res) => {
     if (allLeavesbyIntern.length === 0) {
       return res.send({ empty: "You have no leave applications active" });
     }
+    console/log(allLeavesbyIntern)
     return res.send(allLeavesbyIntern);
   } catch (e) {
     console.error(e.message);
