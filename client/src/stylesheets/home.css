@@ -266,6 +266,7 @@ padding-top: 2em;
   }
   
   .evolve-btn{
+    text-align: center;
   text-decoration: none;
   border: none;
   padding: 0.5rem 0.9rem;
