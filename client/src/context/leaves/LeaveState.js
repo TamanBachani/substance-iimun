@@ -77,7 +77,13 @@ const LeaveState = (props) => {
       },
     });
     setloading(false);
-    const res = await response.json()
+    let res
+    if (!response.status === 500) {
+      res = await response.json()
+    }
+    else {
+      res = [];
+    }
     if (response.status === 200) {
       if (type === 'pending') {
         let pendingArray = [];
