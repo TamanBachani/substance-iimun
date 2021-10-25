@@ -50,7 +50,6 @@ const LeaveState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        'Accept': 'application/json',
         "auth-token": localStorage.getItem("auth-token"),
       },
     });

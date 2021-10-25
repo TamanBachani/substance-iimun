@@ -198,7 +198,6 @@ router.put("/:id", getIntern, async (req, res) => {
     // console.log(sub_id)
   } catch (e) {
     console.error(e.message);
-    console.log("here")
     res.status(500).send({
       error: e.message,
     });
@@ -214,11 +213,9 @@ router.get("/status", getIntern, async (req, res) => {
     if (allLeavesbyIntern.length === 0) {
       return res.send({ empty: "You have no leave applications active" });
     }
-    console.log(allLeavesbyIntern)
     return res.send(allLeavesbyIntern);
   } catch (e) {
     console.error(e.message);
-    console.log("here")
     return res.status(500).send({
       error: e.message,
     });

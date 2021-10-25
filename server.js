@@ -14,6 +14,12 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+
+
+// Available Routes
+app.use("/auth", require("./routes/internRoutes"));
+app.use("/leaves", require("./routes/leaveRoutes"));
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, "./client/build")));
   app.get("*", function (request, response) {
@@ -21,10 +27,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
-// Available Routes
-app.use("/auth", require("./routes/internRoutes"));
-app.use("/leaves", require("./routes/leaveRoutes"));
 
 // All routes are as follows:
 // Authentication:
