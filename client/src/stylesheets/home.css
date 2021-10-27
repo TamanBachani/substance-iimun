@@ -329,12 +329,12 @@ padding-top: 2em;
     margin: 0em 1.5em !important;
   }
   .hero-text h1 {
-    font-size: 2.5em;
+    font-size: 2.5em !important;
     margin-bottom: 2rem;
     margin-top: 0.5em;
   }
   .hero-text p {
-    font-size: 1.3em;
+    font-size: 1.3em !important;
   }
   .leave-cards, .on-the-things {
     flex-direction: column;
