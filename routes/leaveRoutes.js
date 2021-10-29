@@ -72,7 +72,8 @@ const sendMailsToAdmin = (name, subject) => {
       subject: `${name} has applied for a new Leave!`,
       html: `<div class="mail" style="font-family: 'Trebuchet MS';">
       <h3>Beep Boop Beep!</h3>
-      <h3>A new Leave awaits you. ${name} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply, and for further updates, if any. </h3>
+      <h3>A new Leave awaits you. ${name} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply.</h3>
+      <h3><em>To approve, or not to approve</em></h3>
       <h3>Yours truly enslaved, </h3>
       <h3>Substance Robot 🤖</h3>
       </div>`,
@@ -130,6 +131,7 @@ router.post(
       return res.status(400).send({ errors: errors.array() });
     }
     const internID = req.intern.id;
+    const {name} = await Interns.findById(internID).select('-password')
     const { subject, message } = req.body;
     let sameLeaveBySameIntern = await Leaves.findOne({
       subject,
@@ -153,8 +155,7 @@ router.post(
         message,
       });
       const savedLeave = await leave.save();
-      // console.log(savedLeave)
-      sendMailsToAdmin(savedLeave.intern.name, savedLeave.subject);
+      sendMailsToAdmin(name, savedLeave.subject);
       res.send({ leave: savedLeave });
     }
   }
