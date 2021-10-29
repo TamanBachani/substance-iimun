@@ -55,11 +55,8 @@ const sendMail = async (name, sub_id, status, subject) => {
   }
 };
 
-
-
-// to schedule
-cron.schedule("0 19 * * 1,3,5",  function () {
-  adminMails.forEach(async () => {
+const sendMailsToAdmin = (name, subject) => {
+  adminMails.forEach(async (admin_id) => {
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -71,16 +68,43 @@ cron.schedule("0 19 * * 1,3,5",  function () {
     // send email
     await transporter.sendMail({
       from: process.env.FROM_ID,
-      to: "reindeers.santa@gmail.com",
-      subject: "You might have New Pending Leaves to reply to",
-      html: `<div class="mail" style="font-family: 'Georgia';">
+      to: admin_id,
+      subject: `${name} has applied for a new Leave!`,
+      html: `<div class="mail" style="font-family: 'Trebuchet MS';">
       <h3>Beep Boop Beep!</h3>
-      <h3>Just a benign reminder to check the website, new leaves might await you!</h3>
-      <h3>Yours truly enslaved, Substance Robot ;)</h3>
+      <h3>A new Leave awaits you. ${name} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply, and for further updates, if any. </h3>
+      <h3>Yours truly enslaved, </h3>
+      <h3>Substance Robot 🤖</h3>
       </div>`,
     });
   });
-});
+}
+
+
+// to schedule
+// cron.schedule("0 19 * * 1,3,5",  function () {
+//   adminMails.forEach(async () => {
+//     const transporter = nodemailer.createTransport({
+//       host: "smtp.gmail.com",
+//       port: 587,
+//       auth: {
+//         user: process.env.FROM_ID,
+//         pass: process.env.FROM_PASSWORD,
+//       },
+//     });
+//     // send email
+//     await transporter.sendMail({
+//       from: process.env.FROM_ID,
+//       to: "reindeers.santa@gmail.com",
+//       subject: "You might have New Pending Leaves to reply to",
+//       html: `<div class="mail" style="font-family: 'Georgia';">
+//       <h3>Beep Boop Beep!</h3>
+//       <h3>Just a benign reminder to check the website, new leaves might await you!</h3>
+//       <h3>Yours truly enslaved, Substance Robot ;)</h3>
+//       </div>`,
+//     });
+//   });
+// });
 
 
 
@@ -130,6 +154,7 @@ router.post(
       });
       const savedLeave = await leave.save();
       // console.log(savedLeave)
+      sendMailsToAdmin(savedLeave.intern.name, savedLeave.subject);
       res.send({ leave: savedLeave });
     }
   }
