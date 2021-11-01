@@ -15,7 +15,7 @@ const LeaveState = (props) => {
   const [rejected, setRejected] = useState([]);
 
   const onChange = (e) => {
-    setLeave({ ...leave, [e.target.name]: e.target.value });
+    setLeave({ ...leave, [e.target.name]: e.target.value});
   };
 
   const applyLeave = async (

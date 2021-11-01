@@ -22,13 +22,13 @@ const InternState = (props) => {
   };
 
   const signUpIntern = async ({ name, sub_id, password }, showAlert) => {
-    
+    const trimmedName = name.trim()
     const response = await fetch("/auth/signUp", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({name, sub_id, password})
+    body: JSON.stringify({name:trimmedName, sub_id, password})
     });
     const status = response.status
     if (status === 200) {
@@ -54,12 +54,13 @@ const InternState = (props) => {
   }
   
   const loginIntern = async ({ name, password }, showAlert) => {
+    const trimmedName = name.trim();
     const response = await fetch("/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name,  password }),
+      body: JSON.stringify({ name:trimmedName,  password }),
     });
     const status = response.status;
     if (status === 200) {
