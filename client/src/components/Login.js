@@ -30,7 +30,7 @@ const Login = () => {
             value={intern.name}
             onChange={onChange}
             required
-            minLength={5}
+            minLength={3}
           />
           <br />
           <input
