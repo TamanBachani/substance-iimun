@@ -57,6 +57,34 @@ const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
   }
 };
 
+<<<<<<< HEAD
+=======
+const sendMailsToAdmin = (name, subject) => {
+  adminMails.forEach(async (admin_id) => {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      auth: {
+        user: process.env.FROM_ID,
+        pass: process.env.FROM_PASSWORD,
+      },
+    });
+    // send email
+    await transporter.sendMail({
+      from: process.env.FROM_ID,
+      to: admin_id,
+      subject: `${name} has applied for a new Leave!`,
+      html: `<div class="mail" style="font-family: 'Trebuchet MS';">
+      <h3>Beep Boop Beep!</h3>
+      <h3>A new Leave awaits you. ${name} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply.</h3>
+      <h3><em>To approve, or not to approve</em></h3>
+      <h3>Yours truly enslaved, </h3>
+      <h3>Substance Robot 🤖</h3>
+      </div>`,
+    });
+  });
+}
+>>>>>>> 7b1e19470617e56355526afa187a90d4a78073d9
 
 
 // to schedule
@@ -108,6 +136,7 @@ router.post(
       return res.status(400).send({ errors: errors.array() });
     }
     const internID = req.intern.id;
+    const {name} = await Interns.findById(internID).select('-password')
     const { subject, message } = req.body;
     let sameLeaveBySameIntern = await Leaves.findOne({
       subject,
@@ -132,7 +161,7 @@ router.post(
         created: Date.now()
       });
       const savedLeave = await leave.save();
-      // console.log(savedLeave)
+      sendMailsToAdmin(name, savedLeave.subject);
       res.send({ leave: savedLeave });
     }
   }
