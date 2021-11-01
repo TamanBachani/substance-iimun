@@ -54,6 +54,7 @@ const Replytoleaves = () => {
             </div>
             <div className="btns">
               <button
+                title="Approve"
                 className="approved"
                 onClick={() => {
                   handleReply(leave._id, "approved", adminFeedback);
@@ -62,6 +63,7 @@ const Replytoleaves = () => {
                 <i className="fas fa-check-circle fa-lg"></i>
               </button>
               <button
+                title="Reject"
                 className="rejected"
                 onClick={() => {
                   handleReply(leave._id, "rejected", adminFeedback);
