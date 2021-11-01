@@ -100,11 +100,12 @@ main {
 
 .subject {
   font-size: 1.075rem;
+  line-height: 1.7rem;
 }
 
 .mail {
   font-size: 1rem;
-  line-height: 1.65rem;
+  line-height: 1.8rem;
 }
 
 .btns {
