@@ -87,7 +87,7 @@ router.post(
 router.post(
   "/login",
   [
-    body("name", "Name should be atleast 5 characters long").isLength({ min: 5 }),
+    body("name", "Name should be atleast 3 characters long").isLength({ min: 3 }),
     body("password", "Password should be atleast 5 characters long").isLength({
       min: 5,
     }),
