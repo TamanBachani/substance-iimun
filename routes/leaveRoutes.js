@@ -57,8 +57,7 @@ const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
   }
 };
 
-<<<<<<< HEAD
-=======
+
 const sendMailsToAdmin = (name, subject) => {
   adminMails.forEach(async (admin_id) => {
     const transporter = nodemailer.createTransport({
@@ -84,8 +83,6 @@ const sendMailsToAdmin = (name, subject) => {
     });
   });
 }
->>>>>>> 7b1e19470617e56355526afa187a90d4a78073d9
-
 
 // to schedule
 // cron.schedule("0 19 * * 1,3,5",  function () {
