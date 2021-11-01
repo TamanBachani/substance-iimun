@@ -13,6 +13,10 @@ const InternState = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
   const [details, setDetails] = useState(blankSpaceIntern)
 
+  const toCapitalize = (str )=> {
+    return str.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+  }
+
   const onChange = (e) => {
     setIntern({ ...intern, [e.target.name]: e.target.value });
   };
@@ -33,8 +37,9 @@ const InternState = (props) => {
       if (genAuth.intern.role === 'admin') {
         setIsAdmin(true)
       }
+      const name = toCapitalize(genAuth.intern.name);
       setDetails({
-        name: genAuth.intern.name,
+        name: name,
         sub_id: genAuth.intern.sub_id,
         role: genAuth.intern.role,
       });
@@ -60,8 +65,9 @@ const InternState = (props) => {
     if (status === 200) {
       setLoggedIn(true);
       const genAuth = await response.json();
+      const name = toCapitalize(genAuth.intern.name);
       setDetails({
-        name: genAuth.intern.name,
+        name: name,
         sub_id: genAuth.intern.sub_id,
         role: genAuth.intern.role,
       });
@@ -107,10 +113,11 @@ const InternState = (props) => {
     });
     const status = response.status;
     if (status === 200) {
-      const { name, sub_id, role } = await response.json();
+      let { name, sub_id, role } = await response.json();
       if (role === 'admin') {
         setIsAdmin(true)
       }
+      name = toCapitalize(name);
       setDetails({
         name: name,
         sub_id: sub_id,

@@ -27,6 +27,7 @@ router.post(
 
     try {
       let { name, sub_id, password } = req.body;
+      name = name.toLowerCase();
       sub_id = sub_id.toLowerCase();
       const adminMails = process.env.ADMIN_SUB_ID.split(",");
       
@@ -101,6 +102,7 @@ router.post(
 
     try {
       let { name, password } = req.body;
+      name = name.toLowerCase();
       let intern = await Interns.findOne({ name });
       // if same substance id is put to register
       if (!intern) {
