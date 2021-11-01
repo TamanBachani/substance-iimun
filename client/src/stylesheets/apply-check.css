@@ -128,9 +128,22 @@
   color: white;
 }
 
+.time-ago-check{
+
+    color: #3c096c;  
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 .check-card-padding {
   padding: 1.5em 1.5em;
   padding-top: 0;
+}
+
+.prev-feedback{
+  color: #3c096c;
 }
 
 .check-card:hover {
@@ -155,12 +168,13 @@
 }
 
 .check-status {
-  margin-bottom: 0;
+  margin-top: 1rem;
   font-size: 1.3rem;
   line-height: 1.65rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: white;
+
 }
 
 .check-subject:hover, .check-msg:hover, .check-status:hover{

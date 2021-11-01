@@ -6,6 +6,10 @@ import InternState from "./context/interns/InternState";
 import LeaveState from "./context/leaves/LeaveState";
 import LoadingState from "./context/loading/LoadingState";
 import AlertState from "./context/alerts/AlertState";
+import TimeAgo from "javascript-time-ago";
+
+import en from "javascript-time-ago/locale/en.json";
+TimeAgo.addDefaultLocale(en);
 
 ReactDOM.render(
   <React.StrictMode>

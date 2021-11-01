@@ -35,7 +35,7 @@ function App() {
         sub_id: "",
         role: "",
       });
-      setLeave({ subject: "", message: "", status: "" })
+      setLeave({ subject: "", message: "", status: "",  admin_feedback:"" })
       setallLeaves([])
     }
     // eslint-disable-next-line
@@ -48,7 +48,12 @@ function App() {
         sub_id: "",
         role: "",
       });
-      setLeave({ subject: "", message: "", status: "" });
+      setLeave({
+        subject: "",
+        message: "",
+        status: "",
+        admin_feedback: "",
+      });
       setallLeaves([]);
     }
     // eslint-disable-next-line

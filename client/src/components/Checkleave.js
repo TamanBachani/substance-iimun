@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react'
 import LeaveContext from '../context/leaves/LeaveContext';
 import LoadingContext from '../context/loading/LoadingContext';
 import Spinner from './Spinner';
+import ReactTimeAgo from "react-time-ago";
 
 // importing stylesheet
 import '../stylesheets/apply-check.css'
@@ -49,6 +50,16 @@ const Checkleave = () => {
                   <div className="check-card-padding">
                     <h4 className="check-subject">{leave.subject}</h4>
                     <p className="check-msg">{leave.message}</p>
+                    {leave.admin_feedback && (
+                      <div>
+                        <p className="prev-feedback">
+                          Feedback: "{leave.admin_feedback}"
+                        </p>
+                      </div>
+                    )}
+                    <span className="time-ago-check">
+                      <ReactTimeAgo date={leave.created} timeStyle="twitter" />
+                    </span>
                     <p className="check-status">{leave.status}</p>
                   </div>
                 </div>
