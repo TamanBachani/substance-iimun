@@ -14,6 +14,13 @@ const LeaveState = (props) => {
   const [approved, setApproved] = useState([]);
   const [rejected, setRejected] = useState([]);
 
+  const toCapitalize = (str) => {
+    return str.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+      match.toUpperCase()
+    );
+  };
+
+
   const onChange = (e) => {
     setLeave({ ...leave, [e.target.name]: e.target.value});
   };
@@ -92,7 +99,8 @@ const LeaveState = (props) => {
             const { intern, subject, message, status, _id, admin_feedback } =
               element;
             let { created } = element;
-            const { name } = intern;
+            let { name } = intern;
+            name = toCapitalize(name)
             created = new Date(created);
             pendingArray.push({
               name,
@@ -113,8 +121,9 @@ const LeaveState = (props) => {
           res.forEach((element) => {
             const { intern, subject, message, status, _id, admin_feedback } =
               element;
-            const { name } = intern;
+            let { name } = intern;
             let { created } = element;
+            name = toCapitalize(name);
             created = new Date(created);
             pendingArray.push({
               name,
@@ -141,8 +150,9 @@ const LeaveState = (props) => {
               _id,
               admin_feedback,
             } = element;
-            const { name } = intern;
+            let { name } = intern;
             let { created } = element;
+            name = toCapitalize(name);
             created = new Date(created);
             pendingArray.push({
               name,
