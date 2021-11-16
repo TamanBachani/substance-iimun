@@ -15,6 +15,9 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+const toCapitalize = (str) => {
+  return str.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) => match.toUpperCase());
+};
 
 // function to send mail
 const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
@@ -26,7 +29,8 @@ const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
       pass: process.env.FROM_PASSWORD,
     },
   });
-  capStatus = capitalizeFirstLetter(status)
+  const capStatus = capitalizeFirstLetter(status)
+  const capName = toCapitalize(name)
   if (capStatus === "Rejected") {
     // send email
     await transporter.sendMail({
@@ -34,7 +38,7 @@ const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
       to: sub_id,
       subject: `Your application for leave has been ${capStatus}!`,
       html: `<div class="mail" style="font-family: 'Trebuchet MS';">
-  <h3>Hello ${name},</h3>
+  <h3>Hello ${capName},</h3>
   <h3>Meep Morp Zeep! The Application for your leave with subject: <span class="subject" style="color: red;">${subject}</span>, has been <span class="status" style="color: red;text-decoration: underline;">${capStatus}!</span> Please contact your mentor if you have any queries.</h3>
   <h3>Preksha says, <em>"${admin_feedback}"</em></h3>
 <h3>Yours truly enslaved,</h3>
@@ -47,7 +51,7 @@ const sendMail = async (name, sub_id, status, subject, admin_feedback) => {
       to: sub_id,
       subject: `Your application for leave has been ${capStatus}!`,
       html: `<div class="mail" style="font-family: 'Trebuchet MS';">
-  <h3>Hello ${name},</h3>
+  <h3>Hello ${capName},</h3>
   <h3>Meep Morp Zeep! The Application for your leave with subject: <span class="subject" style="color: green;">${subject}</span>, has been <span class="status" style="color: green;text-decoration: underline;">${capStatus}!</span> Spend your day jovially!</h3>
   <h3>Preksha says, <em>"${admin_feedback}"</em></h3>
 <h3>Yours truly enslaved,</h3>
@@ -68,14 +72,15 @@ const sendMailsToAdmin = (name, subject) => {
         pass: process.env.FROM_PASSWORD,
       },
     });
+    const capName = toCapitalize(name);
     // send email
     await transporter.sendMail({
       from: process.env.FROM_ID,
       to: admin_id,
-      subject: `${name} has applied for a new Leave!`,
+      subject: `${capName} has applied for a new Leave!`,
       html: `<div class="mail" style="font-family: 'Trebuchet MS';">
       <h3>Beep Boop Beep!</h3>
-      <h3>A new Leave awaits you. ${name} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply.</h3>
+      <h3>A new Leave awaits you. ${capName} says, "<span style="color: orange;">${subject}</span>". Kindly check the website to reply.</h3>
       <h3><em>To approve, or not to approve</em></h3>
       <h3>Yours truly enslaved, </h3>
       <h3>Substance Robot 🤖</h3>
