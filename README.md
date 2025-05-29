@@ -1,68 +1,63 @@
-🏛️ Substance I.I.M.U.N. – HR Management Web Portal
-An internal HR and attendance portal built for the Substance Department of I.I.M.U.N., designed to streamline operations, manage intern leave applications, and improve visibility for the admin team.
+# 🏛️ Substance I.I.M.U.N. – HR Management Web Portal
 
-👨‍💻 Developed and maintained by Taman Bachani, Assistant Director – Substance Department
-🌐 Live demo: https://substance-iimun.onrender.com/
+An internal HR and attendance portal built for the **Substance Department of I.I.M.U.N.**, designed to streamline operations, manage intern leave applications, and improve visibility for the admin team.
 
-🚀 Key Features
-👥 User (Intern) Panel
-🔐 Secure login with cookie-based session management
+> 👨‍💻 Developed and maintained by **Taman Bachani**, Assistant Director – Substance Department  
+> 🌐 **Live Demo**: [https://substance-iimun.onrender.com/](https://substance-iimun.onrender.com/)
 
-🆔 I.I.M.U.N. ID verification at registration
+---
 
-📅 Leave application form with validation
+## 🚀 Key Features
 
-📄 View your leave history & status
+### 👥 User (Intern) Panel
+- 🔐 Secure login with **cookie-based session management**
+- 🆔 I.I.M.U.N. ID verification at registration
+- 📝 Leave application form with validation
+- 📂 View personal leave history and status
+- 💬 Receive feedback/comments on rejected leaves
 
-💬 Receive feedback/comments on rejected leaves
+### 🛠️ Admin Panel
+- ✅ Approve / ❌ Reject leave applications
+- 📅 View all intern applications by date or user
+- 🧾 Add custom feedback to individual leave requests
+- 📊 Dashboard-style overview for simplified admin control
 
-🛠️ Admin Panel
-✅ Approve / ❌ Reject leave applications
+---
 
-🗃 View all intern applications by date/user
+## 📸 Screenshots
 
-🧾 Add custom feedback to individual leave requests
+_(Coming soon — after uploading to `/assets` folder)_
 
-📊 Dashboard-style overview for better admin control
+| Login Page | User Dashboard | Admin Panel |
+|------------|----------------|-------------|
+| ![Login](assets/login.png) | ![Dashboard](assets/user-dashboard.png) | ![Admin](assets/admin-panel.png) |
 
-📸 Screenshots
-(Add screenshots here after uploading to assets/ folder)
+---
 
-Login Page	User Dashboard	Admin Panel
+## 🎥 Demo Video
 
-🎥 Demo Video
-📺 Coming soon — YouTube walkthrough will be embedded here.
+📺 *Coming soon* — YouTube walkthrough will be embedded here.
 
-🛠️ Tech Stack
-Frontend	Backend	Auth & State	Hosting
-HTML, CSS, JS	Node.js + Express	Cookies, Sessions	Render.com
-Bootstrap (UI)	MongoDB (via db.js)	Express middleware	
+---
 
-📦 Project Structure
-bash
-Copy
-Edit
+## 🧰 Tech Stack
+
+| Frontend | Backend | Auth/Session | Hosting |
+|----------|---------|--------------|---------|
+| HTML, CSS, JS | Node.js + Express | Cookies & Sessions | Render.com |
+| Bootstrap | MongoDB (`db.js`) | Express Middleware | |
+
+---
+
+## 📁 Project Structure
+
+```bash
 .
-├── client/             # Frontend (static HTML/CSS/JS)
-├── middleware/         # Auth and session middleware
-├── models/             # Mongoose schemas or data structure logic
-├── routes/             # All route controllers
-├── server.js           # Entry point
-├── Dockerfile.render   # Deployment config
+├── client/             # Frontend (HTML/CSS/JS)
+├── middleware/         # Auth/session handling
+├── models/             # Data structure logic
+├── routes/             # Routing logic
+├── server.js           # Main entry point
+├── Dockerfile.render   # Docker config for deployment
 ├── render.yaml         # Render deployment config
-└── .env                # Environment variables (excluded from Git)
-🧪 Testing & Validation
-Tested with 50+ interns across departments
-
-Fully responsive and works across modern browsers
-
-Handles session persistence, error handling, and edge cases like invalid IIMUN IDs
-
-🙋‍♂️ About I.I.M.U.N.
-The Indian International Model United Nations (I.I.M.U.N.) is one of the largest student-run youth organizations in the world, known for engaging thousands of high school and college students through events, conferences, and workshops.
-
-📫 Contact
-For collaborations, reuse, or access to this system for educational orgs:
-
-📧 workwith.taman@gmail.com
-🔗 LinkedIn
+└── .env                # Environment variables (not tracked)
