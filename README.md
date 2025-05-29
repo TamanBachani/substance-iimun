@@ -2,7 +2,7 @@
 
 An internal HR and attendance portal built for the **Substance Department of I.I.M.U.N.**, designed to streamline operations, manage intern leave applications, and improve visibility for the admin team.
 
-> 👨‍💻 Developed and maintained by **Taman Bachani**, Assistant Director – Substance Department  
+> 👨‍💻 Developed and maintained by **Taman Bachani**, Assistant Director – Substance Department (2020-2022) 
 > 🌐 **Live Demo**: [https://substance-iimun.onrender.com/](https://substance-iimun.onrender.com/)
 
 ---
