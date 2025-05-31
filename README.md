@@ -34,12 +34,6 @@ _(Coming soon — after uploading to `/assets` folder)_
 
 ---
 
-## 🎥 Demo Video
-
-📺 *Coming soon* — YouTube walkthrough will be embedded here.
-
----
-
 ## 🧰 Tech Stack
 
 | Frontend | Backend | Auth/Session | Hosting |
