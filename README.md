@@ -30,7 +30,7 @@ _(Coming soon — after uploading to `/assets` folder)_
 
 | Login Page | User Dashboard | Admin Panel |
 |------------|----------------|-------------|
-| ![Login](assets/login.png) | ![Dashboard](assets/user-dashboard.png) | ![Admin](assets/admin-panel.png) |
+| ![Login](assets/login.png) | ![Dashboard](assets/user_dashboard.png) | ![Admin](assets/admin_panel.png) |
 
 ---
 
